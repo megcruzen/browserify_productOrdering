@@ -6,7 +6,8 @@ import productHTML from "./product"
 const productList = {
     displayProducts() {
         let productContainer = document.querySelector(".products");
-        productContainer.innerHTML = "<p>This is a test</p>"
+        productContainer.innerHTML = "<h2>Products</h2>"
+        // productContainer.innerHTML = "<p>This is a test</p>"
         // get all products from productData
         // forEach product, call productBuilder
         let product = productHTML.productBuilder();
