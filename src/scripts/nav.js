@@ -4,9 +4,7 @@ const nav = {
 
         let logo = document.createElement("div");
         logo.setAttribute("class", "logo");
-        logo.innerHTML = "<a href='#'>Betsy's Boutique</a>"
-
-        let spacer = document.createElement("div");
+        logo.innerHTML = "<a href='#'>Betsy's Boutique</a>";
 
         let navLinks = document.createElement("div");
         navLinks.setAttribute("class", "navlinks");
@@ -17,7 +15,6 @@ const nav = {
             </ul>`;
 
         navContainer.appendChild(logo);
-        navContainer.appendChild(spacer);
         navContainer.appendChild(navLinks);
 
     }

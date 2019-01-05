@@ -59,3 +59,43 @@ body {
 .navlinks a:hover {
     color: #A1D490;
 }
+
+/* PRODUCT */
+
+.products {
+    padding: 20px;
+}
+
+.product_box {
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.info_box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spacer {
+    width: 20px;
+    height: 20px;
+}
+
+.product_image {
+    width: 200px;
+    height: auto;
+}
+
+.product_deets h3 {
+    margin: 0;
+}
+
+.product_desc {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 400px;
+}
+
+.product_price {
+    font-weight: bold;
+}
