@@ -1,3 +1,5 @@
+import reviewHTML from "./review"
+
 const productHTML = {
     productBuilder() {
         let productArticle = document.createElement("article");
@@ -45,11 +47,8 @@ const productHTML = {
         productArticle.appendChild(mainProductInfo);
 
         // if reviews
-        let reviewBox = document.createElement("div");
-        reviewBox.setAttribute("class", "review_box");
-        reviewBox.innerHTML = "<h4>Reviews</h4>"
-
-        productArticle.appendChild(reviewBox);
+        let review = reviewHTML.reviewBuilder();
+        productArticle.appendChild(review);
 
         return productArticle;
     }

@@ -84,6 +84,7 @@ body {
 .product_image {
     width: 200px;
     height: auto;
+    padding-bottom: 20px;
 }
 
 .product_deets h3 {
@@ -98,4 +99,14 @@ body {
 
 .product_price {
     font-weight: bold;
+}
+
+.review_text {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.review_name {
+    color: #999;
+    font-style: italic;
 }
