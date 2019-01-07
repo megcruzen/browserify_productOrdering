@@ -1,4 +1,4 @@
-//  import productData from "./productData"
+import productData from "./productData"
 import productHTML from "./product"
 
 // Get all products from productData and then use forEach to run productHTML.productBuilder()
@@ -6,12 +6,26 @@ import productHTML from "./product"
 const productList = {
     displayProducts() {
         let productContainer = document.querySelector(".products");
-        productContainer.innerHTML = "<h2>Products</h2>"
-        // productContainer.innerHTML = "<p>This is a test</p>"
+        productContainer.innerHTML = "<h2>Products</h2>";
+
+        // Create doc frag to hold each product
+        let productDocFrag = document.createDocumentFragment();
+
         // get all products from productData
-        // forEach product, call productBuilder
-        let product = productHTML.productBuilder();
-        productContainer.appendChild(product);
+        productData.getProducts()
+        .then(allProducts => {
+            let singleProduct;
+            // console.log(allProducts);
+
+            // forEach product, call productBuilder
+            allProducts.forEach(productItem => {
+                singleProduct = productHTML.productBuilder(productItem); // Imports productArticle from product.js
+                productDocFrag.appendChild(singleProduct);
+            })
+
+            // Append doc frag to productContainer (which already exists in index.html)
+            productContainer.appendChild(productDocFrag);
+        });
     }
 }
 
