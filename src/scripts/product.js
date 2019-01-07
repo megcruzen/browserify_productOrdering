@@ -1,10 +1,14 @@
-import reviewHTML from "./review"
+import reviewList from "./reviewList"
 
 const productHTML = {
     productBuilder() {
+
+        // Create entire product article
         let productArticle = document.createElement("article");
         productArticle.setAttribute("class", "product_box");
 
+
+        // Create main product info (photo and details)
         let mainProductInfo = document.createElement("section");
         mainProductInfo.setAttribute("class", "info_box");
 
@@ -18,9 +22,11 @@ const productHTML = {
         let spacer = document.createElement("div");
         spacer.setAttribute("class", "spacer");
 
+        // Create product details box
         let productInfo = document.createElement("div");
         productInfo.setAttribute("class", "product_deets");
 
+        // Create product details to add to details box
         let productName = document.createElement("h3");
         productName.textContent = "Product Name";
         let productDesc = document.createElement("p");
@@ -32,13 +38,13 @@ const productHTML = {
         let productQty = document.createElement("p");
         productQty.textContent = "In stock: 5";
 
-        // Add product deets to product_deets
+        // Add product deets to details box
         productInfo.appendChild(productName);
         productInfo.appendChild(productDesc);
         productInfo.appendChild(productPrice);
         productInfo.appendChild(productQty);
 
-        // Add image_box, spacer, and product_deets to info_box
+        // Add image box, spacer, and product details to main info box
         mainProductInfo.appendChild(productPhotoBox);
         mainProductInfo.appendChild(spacer);
         mainProductInfo.appendChild(productInfo);
@@ -46,11 +52,24 @@ const productHTML = {
         // Add info_box to the product_box
         productArticle.appendChild(mainProductInfo);
 
-        // if reviews
-        let review = reviewHTML.reviewBuilder();
-        productArticle.appendChild(review);
 
-        return productArticle;
+        /******* REVIEWS *****/
+
+        // Create reviews section
+        let reviewSection = document.createElement("section");
+        reviewSection.setAttribute("class", "review_section");
+        let reviewHeader = document.createElement("h3");
+        reviewHeader.textContent = "Reviews";
+        reviewSection.appendChild(reviewHeader);
+
+        // Append reviews section to DOM, inside product article
+        productArticle.appendChild(reviewSection);
+
+        // Get review list from reviewList.js
+        reviewList.displayReviews(reviewSection);
+        // ^^ Pass reviewSection so it gets filled inside displayReviews() and is passed back.
+
+        return productArticle; // return to productList
     }
 }
 
