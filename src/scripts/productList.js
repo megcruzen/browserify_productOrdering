@@ -1,7 +1,7 @@
-import productData from "./productData"
+//  import productData from "./productData"
 import productHTML from "./product"
 
-// Get all products from productData and then use forEach to run productHTML.buildProduct()
+// Get all products from productData and then use forEach to run productHTML.productBuilder()
 
 const productList = {
     displayProducts() {
