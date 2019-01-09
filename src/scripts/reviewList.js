@@ -4,10 +4,9 @@ import reviewHTML from "./review"
 // Get all reviews from reviewData and then use forEach to run reviewHTML.reviewBuilder()
 
 const reviewList = {
-    // setFetch(productItem.id) {
-    //     reviewData.getReviews()
-    // },
-    displayReviews(reviewSection, productId) {         // passing reviewSection from product.js & filling it with info
+    displayReviews(reviewSection, productId) {
+        // passing reviewSection from product.js & filling it with info
+        // passing productId from product.js so it get inserted into fetch
         reviewData.getReviews(productId)
         .then(allReviews => {
 
