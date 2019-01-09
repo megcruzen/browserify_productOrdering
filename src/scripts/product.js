@@ -6,6 +6,7 @@ const productHTML = {
         // Create entire product article
         let productArticle = document.createElement("article");
         productArticle.setAttribute("class", "product_box");
+        // productArticle.setAttribute("id", productObj.id);       // set DOM ID = productObj.id
 
         // Create main product info (photo and details)
         let mainProductInfo = document.createElement("section");
@@ -52,6 +53,7 @@ const productHTML = {
         // Add info_box to the product_box
         productArticle.appendChild(mainProductInfo);
 
+        console.log("product ID:", productObj.id);
 
         /******* REVIEWS *****/
 
@@ -66,8 +68,7 @@ const productHTML = {
         productArticle.appendChild(reviewSection);
 
         // Get review list from reviewList.js
-        reviewList.displayReviews(reviewSection);
-        // ^^ Pass reviewSection so it gets filled inside displayReviews() and is passed back.
+        reviewList.displayReviews(reviewSection, productObj.id); // Pass reviewSection so it gets filled inside displayReviews() and is passed back.
 
         return productArticle; // send to productList
     }

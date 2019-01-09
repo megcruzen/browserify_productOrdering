@@ -4,14 +4,15 @@ import reviewHTML from "./review"
 // Get all reviews from reviewData and then use forEach to run reviewHTML.reviewBuilder()
 
 const reviewList = {
-    displayReviews(reviewSection) {         // passing reviewSection from product.js & filling it with info
-        reviewData.getReviews()
+    // setFetch(productItem.id) {
+    //     reviewData.getReviews()
+    // },
+    displayReviews(reviewSection, productId) {         // passing reviewSection from product.js & filling it with info
+        reviewData.getReviews(productId)
         .then(allReviews => {
 
             // Create doc frag
             let reviewDocFragment = document.createDocumentFragment();
-
-            // console.log(allReviews);
 
             allReviews.forEach(reviewItem => {
 
