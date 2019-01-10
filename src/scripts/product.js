@@ -53,7 +53,7 @@ const productHTML = {
         // Add info_box to the product_box
         productArticle.appendChild(mainProductInfo);
 
-        console.log("product ID:", productObj.id);
+        // console.log("product ID:", productObj.id);
 
         /******* REVIEWS *****/
 
@@ -68,7 +68,9 @@ const productHTML = {
         productArticle.appendChild(reviewSection);
 
         // Get review list from reviewList.js
-        reviewList.displayReviews(reviewSection, productObj.id); // Pass reviewSection so it gets filled inside displayReviews() and is passed back.
+        reviewList.displayReviews(reviewSection, productObj.id); 
+        // Pass reviewSection so it gets filled inside displayReviews() and is passed back.
+        // Pass productObj.id to be used inside review fetch call
 
         return productArticle; // send to productList
     }

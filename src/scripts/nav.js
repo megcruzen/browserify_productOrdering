@@ -16,7 +16,6 @@ const nav = {
 
         navContainer.appendChild(logo);
         navContainer.appendChild(navLinks);
-
     }
 }
 
