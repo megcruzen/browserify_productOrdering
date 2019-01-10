@@ -68,7 +68,7 @@ const productHTML = {
         productArticle.appendChild(reviewSection);
 
         // Get review list from reviewList.js
-        reviewList.displayReviews(reviewSection, productObj.id); 
+        reviewList.displayReviews(reviewSection, productObj.id);
         // Pass reviewSection so it gets filled inside displayReviews() and is passed back.
         // Pass productObj.id to be used inside review fetch call
 
